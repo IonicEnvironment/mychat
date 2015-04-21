@@ -1,0 +1,40 @@
+{
+  "ProjectName": "Ionic_Chat",
+  "ProjectGuid": "923f4108-afa8-4410-a5e3-7e24814c4c5d",
+  "projectVersion": 1,
+  "AppIdentifier": "com.telerik.IonicChat",
+  "DisplayName": "Ionic_Chat",
+  "Author": "",
+  "Description": "",
+  "BundleVersion": "1.0",
+  "AndroidVersionCode": "1",
+  "iOSDeviceFamily": [
+    "1",
+    "2"
+  ],
+  "iOSBackgroundMode": [],
+  "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
+  "FrameworkVersion": "3.5.0",
+  "AndroidPermissions": [],
+  "DeviceOrientations": [
+    "Portrait",
+    "Landscape"
+  ],
+  "AndroidHardwareAcceleration": "false",
+  "iOSStatusBarStyle": "Default",
+  "Framework": "Cordova",
+  "WP8TileTitle": "",
+  "WP8Publisher": "",
+  "WP8Capabilities": [],
+  "WP8Requirements": [],
+  "WP8PublisherID": "{2db9b940-457f-4538-9919-38cf29d6f20e}",
+  "WP8ProductID": "{4593ebc2-3fb5-4aa3-a793-e63b922272f1}",
+  "WPSdk": "8.0",
+  "WP8PackageIdentityName": "1234Telerik.IonicChat",
+  "WP8WindowsPublisherName": "CN=Telerik",
+  "WP8SupportedResolutions": [
+    "ID_RESOLUTION_WVGA",
+    "ID_RESOLUTION_WXGA",
+    "ID_RESOLUTION_HD720P"
+  ]
+}
