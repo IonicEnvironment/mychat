@@ -16,11 +16,45 @@
     
 </head>
 <body ng-app="mobreg">
-     <ion-nav-bar align-title="center" class="bar-stable nav-title-slide-ios7">
+     <ion-nav-bar align-title="center" class="bar-stable nav-title-slide-ios7 txtClr">
          <ion-nav-back-button class="button-clear">
              <i class="ion-chevron-left"></i>Back
          </ion-nav-back-button>
      </ion-nav-bar>
     <ion-nav-view></ion-nav-view>
+    
+    <script id="home.html" type="text/ng-template">
+        <ion-view title="Register Number" ng-controller="mobileregister">
+            <ion-content>
+                <div class="list">
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">First Name</span>
+                        <input type="text" placeholder="First Name" ng-model="fname"/>
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Last Name</span>
+                        <input type="text" placeholder="Last Name" ng-model="lname"/>
+                    </label>
+                    <label class="item item-input item-floating-label">
+                        <span class="input-label">Mobile Number</span>
+                        <input type="number" maxlength="10" placeholder="Mobile Number" ng-model="mobnum"/>
+                    </label>
+                </div>
+                <div class="list-inset">
+                    <button class="button button-block button-positive" on-tap="callme()">Register</button>
+                </div>
+        <ul id="contactList">
+        </ul>
+            </ion-content>
+        </ion-view>
+    </script>
+    
+    <script id="signup.html" type="text/ng-template">
+        <ion-view title="child page">
+            <ion-content>
+                <h2>Welcome</h2>
+            </ion-content>
+        </ion-view>
+    </script>
 </body>
 </html>
