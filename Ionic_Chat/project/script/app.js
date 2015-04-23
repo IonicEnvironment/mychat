@@ -15,36 +15,15 @@ app.config(function($stateProvider,$urlRouterProvider){
 
 app.run(function($ionicPlatform){
     $ionicPlatform.ready(function(){
-        console.log(navigator.contacts);
-        adata();
-        
-        function adata()
-        {
-            var options = new ContactFindOptions();
-                options.filter="";
-                options.multiple=true; 
-                var fields = ["*"];
-                navigator.contacts.find(fields, onSuccess, onError, options);
-        }
-        
-        function onSuccess(contacts) {
-            alert(JSON.stringify(contacts[7]));
-                for (var i = 0; i < contacts.length; i++) {
-                    
-                    alert(JSON.stringify(contacts[i].phoneNumber[0].value));
-                }
-            }
-        
-        function onError()
-{
-alert("Some Error Occured");
-}
+       
     });
 });
+
 app.controller('mobileregister',['$scope','$state',function($scope,$state){
-    $scope.callme = function()
+    
+    $scope.mobileRegister = function()
     {
-        if(angular.isUndefined(this.fname) || this.fname === null)
+        /*if(angular.isUndefined(this.fname) || this.fname === null)
         {
             navigator.notification.alert("Please enter Firstname",function(){},"Notification","OK");
         }
@@ -57,9 +36,55 @@ app.controller('mobileregister',['$scope','$state',function($scope,$state){
             navigator.notification.alert("Please enter Mobile Number",function(){},"Notification","OK");
         }
         else
-        {
-            alert("name : "+this.fname+" "+this.lname+"\nmobile number : "+this.mobnum);
+        {*/
+            //alert("name : "+this.fname+" "+this.lname+"\nmobile number : "+this.mobnum);
             $state.go("signup");
+       // }
+    }
+}]);
+
+app.controller('contactctrl',['$scope',function($scope){
+    
+    $scope.$on('$ionicView.enter',function(){
+        try
+        {
+            var options = new ContactFindOptions();
+            options.filter="";
+            options.multiple=true; 
+            var fields = ["*"];
+    
+            $scope.contactData = [];
+            $scope.restData = [];
+            navigator.contacts.find(fields, onSuccess, onError, options);
+    
+            function onSuccess(contacts) {
+                for(x in contacts)
+                {
+                    if(contacts[x]['phoneNumbers'] === "null" || contacts[x]['phoneNumbers'] === null)
+                    {
+                        $scope.restData.push({mob:contacts[x]['phoneNumbers'],name:contacts[x]['displayName'],type:contacts[x]['phoneNumbers'],photo:contacts[x]['photos'][0].value});
+                    }
+                    else
+                    {
+                        $scope.contactData.push({mob:contacts[x]['phoneNumbers'][0].value,name:contacts[x]['displayName'],type:contacts[x]['phoneNumbers'][0].type,photo:contacts[x]['photos'][0].value});
+                    }
+                }
+            }
+
+            function onError()
+            {
+              alert("Some Error Occured");
+            }
         }
+        catch(ex)
+        {
+            alert(ex.message);
+        }
+       alert("contact");
+    });
+    
+    $scope.checkit = function()
+    {
+        alert("checkit");
     }
 }]);
